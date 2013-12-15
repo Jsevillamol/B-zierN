@@ -34,19 +34,20 @@ def get_point (control_points, parameter):
 	
 #Interpola linealmente dos puntos aplicando un parámetro
 def interpolate(p1,p2,parameter):
-	pt = [0,0]
-	pt[0] = (1-parameter)*p1[0] + parameter*p2[0]
-	pt[1] = (1-parameter)*p1[1] + parameter*p2[1]
-	return pt
+        pt = [0,0]
+        pt[0] = (1-parameter)*p1[0] + parameter*p2[0]
+        pt[1] = (1-parameter)*p1[1] + parameter*p2[1]
+        return pt
 
 #Interpola recursivamente una lista de puntos hasta que se reduce a un punto
 def recursive_interpolation(points, parameter):
-	for interpolation in range (len(points[:])-1):
-		for i in range(len(points)-1):
-			points[i] = interpolate (points[i],points[i+1],parameter)
-			#Cada nuevo punto se obtiene interpolando un par
-		points.pop()
-	return points
+        newpoints = points[:]
+        for interpolation in range (len(points)-1):
+                for i in range(len(newpoints)-1):
+                        newpoints[i] = interpolate (newpoints[i],newpoints[i+1],parameter)
+                        #Cada nuevo punto se obtiene interpolando un par de puntos
+                newpoints.pop() #Eliminates the last point
+        return newpoints
 
 #------------------------------------------------------------
 #For testing purposes
