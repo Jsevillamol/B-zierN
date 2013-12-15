@@ -23,13 +23,6 @@ class bezierN:
 		
 		return bezier_curve
 		
-	def split(self, parameter = 0.5):
-		#Returns the control points of a curve that behaves as self in the intervale t = [0, parameter]
-		control_points = []
-		for i in range(len((self.control_points)):
-			control_points += recursive_interpolation (self.control_points [:i+1], parameter)
-		return control_points
-		
 	def transform(self, scalar = 1, vector = [0,0] ):
 		for i in range(len(self.control_points)):
 			#Scalates
@@ -38,6 +31,17 @@ class bezierN:
 			#Translates
 			self.control_points[i][0] += vector[0]
 			self.control_points[i][1] += vector[1]
+	
+	def degree_elevation(control_points):
+        n = len(control_points)
+        #El primer y último punto de control coinciden con el primer y ultimo punto de control de la nueva curva
+        last_point = control_points[-1][:]
+        control_points.append(last_point)
+        #El resto de puntos son calculados
+        for i in xrange(1, n):
+            control_points[i][0]=(float(i)/float(n+1))*control_points[i-1][0]+(1-(float(i)/float(n+1)))*control_points[i][0]
+            control_points[i][1]=(float(i)/float(n+1))*control_points[i-1][1]+(1-(float(i)/float(n+1)))*control_points[i][1]
+        return control_points
 			
 #------------------------------------------------------------------------------	
 def binomial_coefficient(m,n):
