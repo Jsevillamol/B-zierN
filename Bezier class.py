@@ -62,11 +62,11 @@ test = [[0,0],[10,10],[24,69],[74,0],[58,58],[0,100]]*100+[[24,32]]
 
 def recursive_interpolation(points, parameter):
 	for interpolation in range (len(points[:])-1):
-		for i in range(len(points)):
+		for i in range(len(points)-1):
 			points[i] = interpolate (points[i],points[i+1],parameter)
 		points.pop()
 	return points
-	
+
 def interpolate(p1,p2,parameter):
     pt = [0,0]
     pt[0] = (1-parameter)*p1[0] + parameter*p2[0]
