@@ -1,4 +1,4 @@
-from math import *
+#from math import *
 
 #Obtiene manualmente los puntos de control de una curva de Bezier a través de la consola
 def get_control_points(n):
@@ -10,10 +10,13 @@ def get_control_points(n):
     return control_points
 
 #-----------------------------------------------------------
-
+"""
 def binomial_coefficient_factorial(m,n):
     return factorial(m)/(factorial(m-n)*factorial(n))
-    
+"""
+
+#Construye la fila m del triangulo de Pascal y devuelve el elemento n de ella
+#Equivalente a la función comentada
 def binomial_coefficient(m,n):
 	row = [1,1]
 	while m > 1:
@@ -21,7 +24,7 @@ def binomial_coefficient(m,n):
 		new_row = [1]+[row[i]+row[i-1]for i in range(1,len(row))]+[1]
 		row = new_row
 		m-=1
-	return row[n-1]
+	return row[n]
 
 def arithmetic_progression(a1, stop, step):
     progression = []
@@ -61,3 +64,4 @@ def recursive_interpolation(points, parameter):
 #------------------------------------------------------------
 #For testing purposes
 test = [[0,0],[10,10],[24,69],[74,0],[58,58],[0,100]]*100+[[24,32]]
+testparam = {"t0": 0.4, "t1": 0.5, "k": 3}
