@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 def degree_elevation(control_points):
         n = len(control_points)
         #El primer y último punto de control coinciden con el primer y ultimo punto de control de la nueva curva

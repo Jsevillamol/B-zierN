@@ -1,5 +1,8 @@
-from gimp import *
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+from gimp import *
+from auxiliary_functions import *
 
 register(
         "Bezier N",#Name

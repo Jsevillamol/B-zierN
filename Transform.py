@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 def transform(control_points, scalar = 1, vector = [0,0] ):
     for i in range(len(control_points)):
         #Scalates

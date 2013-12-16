@@ -1,4 +1,7 @@
-from math import *
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from auxiliary_functions import *
 
 def blossom (control_points, parameters): #parameters = {t0, k, t1}
         #Gets control_points of an auxiliary curve
@@ -24,8 +27,3 @@ def get_point (control_points, parameter):
                 bezier_point[1] += binomial_coefficient(n,i)*((1-parameter)**(n-i))*(parameter**i)*(control_points[i][1])
         return bezier_point
 
-def binomial_coefficient(m,n):
-    return factorial(m)/(factorial(m-n)*factorial(n))
-
-test = [[0,0],[10,10],[24,69],[74,0],[58,58],[0,100]]
-testparam = {"t0": 0.4, "t1": 0.5, "k": 3}

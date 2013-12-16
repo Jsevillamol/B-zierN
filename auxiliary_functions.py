@@ -1,6 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 #from math import *
 
-#Obtiene manualmente los puntos de control de una curva de Bezier a través de la consola
+#Obtiene manualmente los puntos de control de una curva de Bezier a travÃ©s de la consola
 def get_control_points(n):
     control_points = [[0,0]]*n
     for i in range(n):
@@ -16,11 +19,11 @@ def binomial_coefficient_factorial(m,n):
 """
 
 #Construye la fila m del triangulo de Pascal y devuelve el elemento n de ella
-#Equivalente a la función comentada
+#Equivalente a la funciÃ³n comentada
 def binomial_coefficient(m,n):
 	row = [1,1]
 	while m > 1:
-		#construye una nueva línea del triangulo de Pascal
+		#construye una nueva lÃ­nea del triangulo de Pascal
 		new_row = [1]+[row[i]+row[i-1]for i in range(1,len(row))]+[1]
 		row = new_row
 		m-=1
@@ -44,7 +47,7 @@ def get_point (control_points, parameter):
         return bezier_point
 #--------------------------------------------------------------
 	
-#Interpola linealmente dos puntos aplicando un parámetro
+#Interpola linealmente dos puntos aplicando un parÃ¡metro
 def interpolate(p1,p2,parameter):
         pt = [0,0]
         pt[0] = (1-parameter)*p1[0] + parameter*p2[0]

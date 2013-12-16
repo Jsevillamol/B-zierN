@@ -1,6 +1,8 @@
-from math import *
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from auxiliary_functions import *
 from datetime import *
-import pdb
 
 def bezierN(n, resolution, control_points = None):
 #Returns a list in which each element is the X and Y components
@@ -27,27 +29,6 @@ def bezierN(n, resolution, control_points = None):
     return bezier_curve
 
 #--------------------------------------------------------------------------------
-
-def binomial_coefficient(m,n):
-    return factorial(m)/(factorial(m-n)*factorial(n))
-
-def get_control_points(n):
-    control_points = [[0,0]]*n
-    for i in range(n):
-        print "Control point %d" %i
-        control_points[i][0] = float(raw_input("x = "))
-        control_points[i][1] = float(raw_input("y = "))
-    return control_points
-
-def arithmetic_progression(a1, stop, step):
-    progression = []
-    while a1 <= stop:
-        progression.append(a1)
-        a1 += step
-    return progression
-	
-test = [[0,0],[10,10],[24,69],[74,0],[58,58],[0,100]]*100+[[24,32]]
-
 #--------------------------------------------------------------------------------
 def recursiveBezierN(n, resolution, control_points = None):
 
