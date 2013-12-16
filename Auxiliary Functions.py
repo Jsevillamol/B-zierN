@@ -13,6 +13,16 @@ def get_control_points(n):
 
 def binomial_coefficient(m,n):
     return factorial(m)/(factorial(m-n)*factorial(n))
+    
+def binomial_coefficient(m,n):
+	pascal_triangle_old_row = [0]
+	for iteration in range(m):
+		#construye una nueva línea del triangulo de Pascal
+		pascal_triangle_new_row = []
+		for element in pascal_triangle_old_row:
+			pascal_triangle_new_row += 
+		pascal_triangle.append([1])
+	return pascal_triangle[n]
 
 def arithmetic_progression(a1, stop, step):
     progression = []
