@@ -11,18 +11,17 @@ def get_control_points(n):
 
 #-----------------------------------------------------------
 
-def binomial_coefficient(m,n):
+def binomial_coefficient_factorial(m,n):
     return factorial(m)/(factorial(m-n)*factorial(n))
     
 def binomial_coefficient(m,n):
-	pascal_triangle_old_row = [0]
-	for iteration in range(m):
+	row = [1,1]
+	while m > 1:
 		#construye una nueva línea del triangulo de Pascal
-		pascal_triangle_new_row = []
-		for element in pascal_triangle_old_row:
-			pascal_triangle_new_row += 
-		pascal_triangle.append([1])
-	return pascal_triangle[n]
+		new_row = [1]+[row[i]+row[i-1]for i in range(1,len(row))]+[1]
+		row = new_row
+		m-=1
+	return row[n-1]
 
 def arithmetic_progression(a1, stop, step):
     progression = []
