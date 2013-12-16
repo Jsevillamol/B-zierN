@@ -17,13 +17,3 @@ def restrict (control_points, a=0, b=1):
                 parameters ["k"] = i #k is the number of times t0 is used as a parameter in the polarization
                 control_points[i] = blossom (control_points, parameters)
         return control_points
-
-def get_point (control_points, parameter):
-        bezier_point = [0,0]
-        n = len(control_points)
-        for i in range(n):
-        #Parametric equation of a nth grade bezier line
-                bezier_point[0] += binomial_coefficient(n,i)*((1-parameter)**(n-i))*(parameter**i)*(control_points[i][0])
-                bezier_point[1] += binomial_coefficient(n,i)*((1-parameter)**(n-i))*(parameter**i)*(control_points[i][1])
-        return bezier_point
-

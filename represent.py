@@ -50,9 +50,3 @@ def recursiveBezierN(n, resolution, control_points = None):
     tend = datetime.now()
     print tend - tstart
     return bezier_curve
-
-def interpolate(p1,p2,parameter):
-    pt = [0,0]
-    pt[0] = (1-parameter)*p1[0] + parameter*p2[0]
-    pt[1] = (1-parameter)*p1[1] + parameter*p2[1]
-    return pt
