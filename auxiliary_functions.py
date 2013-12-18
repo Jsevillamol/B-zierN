@@ -62,7 +62,7 @@ def recursive_interpolation(points, parameter):
                         newpoints[i] = interpolate (newpoints[i],newpoints[i+1],parameter)
                         #Cada nuevo punto se obtiene interpolando un par de puntos
                 newpoints.pop() #Eliminates the last point
-        return newpoints
+        return newpoints[0]
 
 #------------------------------------------------------------
 #For testing purposes
