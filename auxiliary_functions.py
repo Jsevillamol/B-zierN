@@ -23,7 +23,7 @@ def binomial_coefficient_factorial(m,n):
 def binomial_coefficient(m,n):
 	row = [1,1]
 	while m > 1:
-		#construye una nueva lÃ­nea del triangulo de Pascal
+		#construye una nueva lÃ­nea del triángulo de Pascal
 		new_row = [1]+[row[i]+row[i-1]for i in range(1,len(row))]+[1]
 		row = new_row
 		m-=1
@@ -42,8 +42,8 @@ def get_point (control_points, parameter):
         n = len(control_points)
         for i in range(n):
         #Parametric equation of a nth grade bezier line
-                bezier_point[0] += binomial_coefficient(n,i)*((1-parameter)**(n-i))*(parameter**i)*(control_points[i][0])
-                bezier_point[1] += binomial_coefficient(n,i)*((1-parameter)**(n-i))*(parameter**i)*(control_points[i][1])
+                bezier_point[0] += bernstein_polynomial(n,i,parameter)*(control_points[i][0])
+                bezier_point[1] += bernstein_polynomial(n,i,parameter)*(control_points[i][1])
         return bezier_point
 #--------------------------------------------------------------
 	
@@ -63,6 +63,11 @@ def recursive_interpolation(points, parameter):
                         #Cada nuevo punto se obtiene interpolando un par de puntos
                 newpoints.pop() #Eliminates the last point
         return newpoints[0]
+
+#------------------------------------------------------------
+#Calculates the ith Bernstein polynomial of grade n at t (0>=t>=1)
+def bernstein_polynomial(n,i,t):
+	return binomial_coefficient(n,i)*(t**i)*(1-t)**(n-i)
 
 #------------------------------------------------------------
 #For testing purposes
