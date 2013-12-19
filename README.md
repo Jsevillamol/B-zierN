@@ -10,3 +10,11 @@ Features
 + Blossom
 + Restriction to a subinterval and curve split
 + Degree elevation
+
+Planned
+-------
++ Gimp-fu support
++ A handy class reuniting the functions
++ Rotation
++ Point-projection
++ Derivatives
