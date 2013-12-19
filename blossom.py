@@ -15,5 +15,5 @@ def restrict (control_points, a=0, b=1):
         parameters = {"t0":a, "t1":b}
         for i in range(len(control_points)):
                 parameters ["k"] = i #k is the number of times t0 is used as a parameter in the polarization
-                control_points[i] = blossom (control_points, parameters)
-        return control_points
+                new_control_points[i] = blossom (control_points, parameters)
+        return new_control_points
