@@ -5,18 +5,21 @@ import math
 
 from auxiliary_functions import *
 
-# Applies affine transformations
-def transform(control_points, scalar=1, vector=[0,0]):
+# Translates
+def translate(control_points, vector=[0,0]):
     for i in range(len(control_points)):
-        # Scalates
-        control_points[i][0] *= scalar
-        control_points[i][1] *= scalar
-        # Translates
         control_points[i][0] += vector[0]
         control_points[i][1] += vector[1]
     return control_points
 
-# Rotates with center in [0,0]
+# Escalates
+def escale(control_points, scalar=1):
+    for i in range(len(control_points)):
+        control_points[i][0] *= scalar
+        control_points[i][1] *= scalar
+    return control_points
+
+# Rotates with centre in [0,0]
 def rotate (control_points, angle=0):
     new_control_points = [[0,0]]*len(control_points)
     for i in range(len(control_points)):
