@@ -31,9 +31,9 @@ def bezierN(n, resolution, control_points = None):
 #--------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------
 def recursiveBezierN(n, resolution, control_points = None):
-
-    if not control_points:#Manual entry of points
-        control_points = get_control_points(n+1) #Returns array: [[x,y]]*(n+1)
+	# Manual entry of points
+    if not control_points:
+        control_points = get_control_points(n+1) # Returns array: [[x,y]]*(n+1)
 		
     tstart = datetime.now()
     bezier_curve = []
@@ -42,9 +42,11 @@ def recursiveBezierN(n, resolution, control_points = None):
     for t in arithmetic_progression(0,1,step):
         anchors = control_points[:]
         for interpolations in range(n): #For a n grade curve we'll need n recursive interpolations
-            for i in range(len(anchors)-1): #Interpolates P0 with P1 and stores the result in P0, then repeats with P1 and P2, etc
+			# Interpolates P0 with P1 and stores the result in P0, then repeats with P1 and P2, etc
+            for i in range(len(anchors)-1): 
                 anchors[i] = interpolate(anchors[i],anchors[i+1],t)
-            anchors.pop()#Eliminates the last point, no longer needed
+			# Eliminates the last point, no longer needed
+            anchors.pop()
         bezier_curve.append(anchors[0])
 		
     tend = datetime.now()

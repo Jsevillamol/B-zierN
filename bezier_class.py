@@ -6,7 +6,8 @@ from auxiliary_functions import *
 class bezierN:
 	def __init__(self, n, control_points = None):
 		self.n = n
-		if not control_points: #Manual input in case no automatic control_points are provided
+		# Manual input in case no automatic control_points are provided
+		if not control_points:
 			self.control_points = get_control_points(n+1) #Returns array: [[x,y]]*(n+1)
 		else:
 			self.control_points = control_points

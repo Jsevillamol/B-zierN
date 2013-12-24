@@ -15,7 +15,8 @@ register(
         "*", #Type of images it works with
         [],#Arguments
         [], #Results
-        bezier_N)
+        bezier_N
+		)
 		
 
 Calculate nth bezier line
