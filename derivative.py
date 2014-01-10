@@ -3,7 +3,7 @@
 
 # Calculates the control polygon of the nth derivative of a Bézier curve
 def derivate(control_points,n):
-    grade = len(control_points)
+    grade = len(control_points)-1
     for iteration in range(n):
         grade -= 1
         for j in range(len(control_points)-1):
@@ -22,7 +22,7 @@ def tangent (control_points, t):
 
 # Calcula el polígono de control de la derivada de una curva de Bézier
 def differentiate (control_points):
-    grade = len(control_points)
+    grade = len(control_points)-1
     derivative_control_points = []
     for i in range(len(control_points)-1):
         derivative_control_points += [grade*(control_points[i+1][0] - control_points[i][0]),
