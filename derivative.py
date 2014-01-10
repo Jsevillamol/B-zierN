@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # Calculates the control polygon of the nth derivative of a Bézier curve
 def derivate(control_points,n):
     grade = len(control_points)
