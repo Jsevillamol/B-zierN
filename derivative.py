@@ -19,7 +19,8 @@ def derivate(control_points, n):
 
 # Calculates the derivative when parameter equals t
 def tangent (control_points, t):
-    pass
+    grade = len(control_points)-1
+    result = 
 
 # Calcula el polígono de control de la derivada de una curva de Bézier
 def differentiate (control_points):
